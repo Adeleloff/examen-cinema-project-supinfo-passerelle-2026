@@ -18,6 +18,7 @@ async function loadResults() {
 
     if (error) {
         message.textContent = "Aucun film trouvé pour cette recherche.";
+        loadMoreBtn.style.display = "none";
         return;
     }
 
@@ -26,12 +27,19 @@ async function loadResults() {
         resultsContainer.appendChild(createMovieCard(movie));
     });
     currentPage++;
+
+    if (resultsContainer.children.length >= total) {
+        loadMoreBtn.style.display = "none";
+    } else {
+        loadMoreBtn.style.display = "block";
+    }
 }
 
 function handleInput() {
     currentQuery = input.value.trim();
     currentPage = 1;
     resultsContainer.textContent = "";
+    loadMoreBtn.style.display = "none";
 
     if (currentQuery.length < 3) {
         message.textContent = "Tapez au moins 3 caractères pour lancer la recherche.";
@@ -45,3 +53,5 @@ input.addEventListener("input", () => {
     clearTimeout(timer);
     timer = setTimeout(handleInput, 500);
 });
+
+loadMoreBtn.addEventListener("click", loadResults);
