@@ -1,1 +1,1 @@
-# examen-js-supin-passerelle-2026
+# examen-cinema-project-supinfo-passerelle-2026
