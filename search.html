@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <h1>Rechercher un film</h1>
+      <input type="search" id="search-input" placeholder="Titre d'un film (en anglais)" autocomplete="off"/>
+      <p id="message"></p>
+      <div id="results" class="movies-grid"></div>
+      <button id="load-more">Charger plus de résultats</button>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script type="module" src="assets/js/search.js"></script>
+  </body>
+</html>
