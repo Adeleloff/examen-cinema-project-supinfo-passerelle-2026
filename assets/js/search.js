@@ -32,6 +32,12 @@ function handleInput() {
     currentQuery = input.value.trim();
     currentPage = 1;
     resultsContainer.textContent = "";
+
+    if (currentQuery.length < 3) {
+        message.textContent = "Tapez au moins 3 caractères pour lancer la recherche.";
+        return;
+    }
+
     loadResults();
 }
 
