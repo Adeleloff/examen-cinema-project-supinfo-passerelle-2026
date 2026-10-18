@@ -9,8 +9,6 @@ const loadMoreBtn = document.querySelector("#load-more");
 let currentQuery = "";
 let currentPage = 1;
 
-let timer;
-
 loadMoreBtn.style.display = "none";
 
 async function loadResults() {
@@ -49,9 +47,7 @@ function handleInput() {
     loadResults();
 }
 
-input.addEventListener("input", () => {
-    clearTimeout(timer);
-    timer = setTimeout(handleInput, 500);
-});
+const debouncedInput = _.debounce(handleInput, 500);
+input.addEventListener("input", debouncedInput);
 
 loadMoreBtn.addEventListener("click", loadResults);
