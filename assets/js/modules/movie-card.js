@@ -7,6 +7,9 @@ export function createMovieCard(movie) {
   const img = document.createElement("img");
   img.src = getPoster(movie.Poster);
   img.alt = `Affiche de ${movie.Title}`;
+  img.addEventListener("error", () => {
+    img.src = "assets/images/no-poster.png";
+  });
 
   const title = document.createElement("h3");
   title.textContent = movie.Title;
