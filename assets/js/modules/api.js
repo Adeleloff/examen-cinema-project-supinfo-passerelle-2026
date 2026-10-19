@@ -38,3 +38,19 @@ export async function getMovieByTitle(title, year = "") {
     return null;
   }
 }
+
+export async function getMovieById(id) {
+  try {
+    const url = `${BASE_URL}?apikey=${API_KEY}&i=${id}&plot=full`;
+    const response = await fetch(url);
+    const data = await response.json();
+
+    if (data.Response === "False") {
+      return null;
+    }
+    return data;
+  } catch (error) {
+    console.error("Erreur API :", error);
+    return null;
+  }
+}
