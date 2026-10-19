@@ -13,8 +13,21 @@ details.style.display = "none";
 
 async function showMovie() {
   const id = getUrlParam("id");
+
+  if (!id) {
+    message.textContent = "Aucun film sélectionné";
+    return;
+  }
+
+  message.textContent = "Chargement...";
   const movie = await getMovieById(id);
 
+  if (!movie) {
+    message.textContent = "Film non trouvé";
+    return;
+  }
+
+  message.textContent = "";
   poster.src = getPoster(movie.Poster);
   poster.alt = "Affiche de " + movie.Title;
   title.textContent = movie.Title;
