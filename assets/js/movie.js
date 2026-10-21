@@ -1,5 +1,9 @@
 import { getMovieById } from "./modules/api.js";
-import { getUrlParam, getPoster } from "./modules/helpers.js";
+import { getUrlParam, getPoster, formatDate } from "./modules/helpers.js";
+
+console.log(formatDate("07 Dec 2010"));
+console.log(formatDate("N/A"));
+console.log(formatDate("pas une date"));
 
 const message = document.querySelector("#message");
 const details = document.querySelector("#movie-details");
@@ -8,6 +12,8 @@ const title = document.querySelector("#movie-title");
 const plot = document.querySelector("#movie-plot");
 const genre = document.querySelector("#movie-genre");
 const actors = document.querySelector("#movie-actors");
+const dvd = document.querySelector("#movie-dvd");
+const ratings = document.querySelector("#movie-ratings");
 
 details.style.display = "none";
 
@@ -34,9 +40,22 @@ async function showMovie() {
   plot.textContent = movie.Plot;
   genre.textContent = movie.Genre;
   actors.textContent = movie.Actors;
+  dvd.textContent = formatDate(movie.DVD);
+
+  ratings.textContent = "";
+  if (movie.Ratings && movie.Ratings.length > 0) {
+    movie.Ratings.forEach((rating) => {
+      const li = document.createElement("li");
+      li.textContent = rating.Source + " : " + rating.Value;
+      ratings.appendChild(li);
+    });
+  } else {
+    ratings.textContent = "Aucune note disponible.";
+  }
 
   document.title = movie.Title;
   details.style.display = "block";
+  console.log(movie);
 }
 
 showMovie();
