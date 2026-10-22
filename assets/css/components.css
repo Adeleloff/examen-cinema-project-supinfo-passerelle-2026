@@ -1,11 +1,87 @@
+/* -------------- Grille et cartes -------------- */
+
 .movies-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+.movie-card {
+  border: 1px solid #dee2e6;
+  border-radius: 20px;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  text-align: center;
+  overflow: hidden;
 }
 
 .movie-card img {
   width: 100%;
   aspect-ratio: 2 / 3;
   object-fit: cover;
+  display: block;
+}
+
+.movie-card h3 {
+  margin: 1rem 1rem 0.5rem;
+  font-size: 1.1rem;
+}
+
+.movie-card p {
+  margin: 0 1rem 1rem;
+  font-size: 0.9rem;
+}
+
+.movie-card a {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* -------------- Bouton "Charger plus" -------------- */
+
+#load-more {
+  display: block;
+  margin: 40px auto 0;
+  padding: 0.8rem 1.5rem;
+  background-color: black;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#load-more:hover {
+  background-color: #333;
+}
+
+#load-more:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* -------------- Recherche -------------- */
+
+#search-input {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 1rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid #dee2e6;
+  border-radius: 20px;
+  font-size: 1rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+#search-input:focus {
+  outline: none;
+  border-color: black;
+}
+
+#message {
+  text-align: center;
+  margin-bottom: 30px;
 }
