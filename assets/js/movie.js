@@ -1,9 +1,10 @@
 import { getMovieById } from "./modules/api.js";
 import { getUrlParam, getPoster, formatDate } from "./modules/helpers.js";
 
-console.log(formatDate("07 Dec 2010"));
-console.log(formatDate("N/A"));
-console.log(formatDate("pas une date"));
+// Test permettant de vérifier si ma function formatDate fonctionne bien
+// console.log(formatDate("07 Dec 2010"));
+// console.log(formatDate("N/A"));
+// console.log(formatDate("pas une date"));
 
 const message = document.querySelector("#message");
 const details = document.querySelector("#movie-details");
@@ -34,8 +35,13 @@ async function showMovie() {
   }
 
   message.textContent = "";
+
+  poster.addEventListener("error", () => {
+    poster.src = "assets/images/no-poster.png";
+  });
   poster.src = getPoster(movie.Poster);
   poster.alt = "Affiche de " + movie.Title;
+
   title.textContent = movie.Title;
   plot.textContent = movie.Plot;
   genre.textContent = movie.Genre;
