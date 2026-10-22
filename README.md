@@ -64,7 +64,7 @@ J’ai également géré quelques cas particuliers : identifiant manquant ou inc
 - `dev` : la branche d'intégration, où je regroupe les fonctionnalités terminées.
 - `feat/api`, `feat/home`, `feat/search`, `feat/movie`, `feat/style` : une branche par fonctionnalité.
 
-Mes messages de commit commencent par un type : `feat:` (nouvelle fonctionnalité), `fix:` (correction), `refactor:` (réécriture du code), `docs:` (README) et `style:` (CSS).
+Mes messages de commit commencent par un type : `feat:` (nouvelle fonctionnalité), `fix:` (correction), `refactor:` (réécriture du code), `docs:` (README), `chore:` (nettoyage, fichiers du projet) et `style:` (CSS).
 
 
 ## Limites
