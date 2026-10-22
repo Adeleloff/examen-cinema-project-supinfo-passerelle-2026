@@ -8,9 +8,23 @@
     <title>Document</title>
   </head>
   <body>
+    <header class="site-header">
+      <a href="index.html" class="site-title">Cinéma</a>
+      <nav class="main-nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="search.html">Recherche</a></li>
+        </ul>
+      </nav>
+    </header>
     <main>
       <h1>Rechercher un film</h1>
-      <input type="search" id="search-input" placeholder="Titre d'un film (en anglais)" autocomplete="off"/>
+      <input
+        type="search"
+        id="search-input"
+        placeholder="Titre d'un film (en anglais)"
+        autocomplete="off"
+      />
       <p id="message"></p>
       <div id="results" class="movies-grid"></div>
       <button id="load-more">Charger plus de résultats</button>
