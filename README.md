@@ -72,3 +72,4 @@ Mes messages de commit commencent par un type : `feat:` (nouvelle fonctionnalit�
 - La liste des films tendance est écrite à la main : elle ne se met pas à jour toute seule.
 - L'API renvoie souvent « N/A » pour la date DVD, donc elle est parfois absente.
 - L'API est en anglais : il faut chercher avec les titres originaux.
+- Aucun film testé ne renvoyait de date DVD dans l'API : j'ai vérifié la fonction `formatDate` avec des dates écrites à la main dans la console.

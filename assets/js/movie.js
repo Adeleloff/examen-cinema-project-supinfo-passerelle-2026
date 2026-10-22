@@ -1,7 +1,7 @@
 import { getMovieById } from "./modules/api.js";
 import { getUrlParam, getPoster, formatDate } from "./modules/helpers.js";
 
-// Test permettant de vérifier si ma function formatDate fonctionne bien
+// Test permettant de vérifier si ma fonction formatDate fonctionne bien
 // console.log(formatDate("07 Dec 2010"));
 // console.log(formatDate("N/A"));
 // console.log(formatDate("pas une date"));
@@ -61,7 +61,6 @@ async function showMovie() {
 
   document.title = movie.Title;
   details.style.display = "flex";
-  console.log(movie);
 }
 
 showMovie();
