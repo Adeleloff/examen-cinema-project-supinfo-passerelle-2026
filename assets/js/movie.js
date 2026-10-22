@@ -54,7 +54,7 @@ async function showMovie() {
   }
 
   document.title = movie.Title;
-  details.style.display = "block";
+  details.style.display = "flex";
   console.log(movie);
 }
 

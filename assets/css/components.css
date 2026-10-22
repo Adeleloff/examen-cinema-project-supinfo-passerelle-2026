@@ -85,3 +85,30 @@
   text-align: center;
   margin-bottom: 30px;
 }
+
+/* -------------- Page de détail -------------- */
+
+.movie-detail {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.movie-detail img {
+  width: 300px;
+  max-width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+}
+
+.movie-detail h1 {
+  margin-top: 0;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .movie-detail {
+    flex-direction: column;
+    align-items: center;
+  }
+}
